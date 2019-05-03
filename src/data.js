@@ -40,7 +40,7 @@ const masterJobsList = {
   },
   2: {
     id: 2,
-    jobType: 'Torsion',
+    jobType: 'Test',
     lane: 'Phase 3',
     startDate: 'dateString',
     dueDate: 'dateString',

@@ -28,6 +28,7 @@ function Lane(props) {
           let jobLane = masterJobsList[jobId].lane;
           if (jobLane === lane){
             return <Job jobInfo={masterJobsList[jobId]}
+                        lane={lane}
               key={index} />;
           }
         })}
