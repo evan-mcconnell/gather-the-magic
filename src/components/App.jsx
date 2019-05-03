@@ -6,12 +6,25 @@ import Header from './Header';
 class App extends Component {
   render() {
     return (
-      <Router>
-        <Header />
-        <hr />
-        <Route exact path="/" component={JobBoard} />
-        {/* <Route path="/inventory" component={InventoryBoard} /> */}
-      </Router>
+      <div>
+        <Router>
+          <Header />
+          <hr />
+          <Route exact path="/" component={JobBoard} />
+          {/* <Route path="/inventory" component={InventoryBoard} /> */}
+        </Router>
+        <style jsx global>{`
+          body {
+            font-family: comfortaa, sans-serif;
+          }
+          * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          }
+        
+        `}</style>
+      </div>
     );
   }
 }

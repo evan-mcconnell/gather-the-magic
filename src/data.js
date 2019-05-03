@@ -21,4 +21,39 @@ const masterLaneList = {
   },
 };
 
-export default masterLaneList;
+const masterJobsList = {
+  0: {
+    id: 0,
+    jobType: 'Test',
+    startDate: 'dateString',
+    dueDate: 'dateString',
+    specialInstructions: "make sure this job is done first"
+  },
+  1: {
+    id: 1,
+    jobType: 'Test',
+    startDate: 'dateString',
+    dueDate: 'dateString',
+    specialInstructions: "No special instructions"
+  },
+  2: {
+    id: 2,
+    jobType: 'Torsion',
+    startDate: 'dateString',
+    dueDate: 'dateString',
+    specialInstructions: "make sure this job is done"
+  },
+  3: {
+    id: 3,
+    jobType: 'Torsion',
+    startDate: 'dateString',
+    dueDate: 'dateString',
+    specialInstructions: "Talk to Nick for more info"
+  },
+};
+
+
+export {
+  masterLaneList,
+  masterJobsList
+}
