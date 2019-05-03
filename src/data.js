@@ -25,6 +25,7 @@ const masterJobsList = {
   0: {
     id: 0,
     jobType: 'Test',
+    lane: 'Phase 3',
     startDate: 'dateString',
     dueDate: 'dateString',
     specialInstructions: "make sure this job is done first"
@@ -32,6 +33,7 @@ const masterJobsList = {
   1: {
     id: 1,
     jobType: 'Test',
+    lane: 'To Be Started',
     startDate: 'dateString',
     dueDate: 'dateString',
     specialInstructions: "No special instructions"
@@ -39,6 +41,7 @@ const masterJobsList = {
   2: {
     id: 2,
     jobType: 'Torsion',
+    lane: 'Phase 3',
     startDate: 'dateString',
     dueDate: 'dateString',
     specialInstructions: "make sure this job is done"
@@ -46,6 +49,7 @@ const masterJobsList = {
   3: {
     id: 3,
     jobType: 'Torsion',
+    lane: 'Phase 1',
     startDate: 'dateString',
     dueDate: 'dateString',
     specialInstructions: "Talk to Nick for more info"

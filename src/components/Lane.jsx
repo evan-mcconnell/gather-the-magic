@@ -15,9 +15,7 @@ const LaneName = styled.div`
   height: 40px;
 `
 
-
 function Lane(props) {
-  console.log(props)
   return (
     <Main>
       <LaneName>
@@ -25,9 +23,12 @@ function Lane(props) {
       </LaneName>
       <div className="lane-content">
       {Object.keys(masterJobsList).map(function(jobId, index) {
-          console.log("inside", masterJobsList[jobId]);
-          return <Job laneinfo={masterJobsList[jobId]}
+        let lane = props.laneinfo.name;
+        let jobLane = masterJobsList[jobId].lane;
+        if (jobLane === lane){
+          return <Job jobinfo={masterJobsList[jobId]}
             key={index} />;
+        }
         })}
       </div>
       <style jsx>{`
@@ -40,7 +41,8 @@ function Lane(props) {
           background-color: lightgrey; 
       // background color will be a function to gradually show a gradient of greys
           border: 1px solid black;
-
+          display: flex;
+          flex-direction: column;
         }
       `}</style>
     </Main>

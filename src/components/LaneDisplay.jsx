@@ -17,7 +17,6 @@ function LaneDisplay() {
     <div>
       <LaneContainer>
         {Object.keys(masterLaneList).map(function(laneId, index) {
-          console.log("inside", masterLaneList[laneId]);
           return <Lane laneinfo={masterLaneList[laneId]}
             key={index} />;
         })}
