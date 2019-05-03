@@ -8,7 +8,7 @@ const LaneContainer = styled.div`
   display: flex;
   flex-direction: row;
   
-`
+`;
 
 
 function LaneDisplay() {

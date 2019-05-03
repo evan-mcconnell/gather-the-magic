@@ -28,7 +28,7 @@ const masterJobsList = {
     lane: 'Phase 3',
     startDate: 'dateString',
     dueDate: 'dateString',
-    specialInstructions: "make sure this job is done first"
+    specialInstructions: 'make sure this job is done first'
   },
   1: {
     id: 1,
@@ -36,7 +36,7 @@ const masterJobsList = {
     lane: 'To Be Started',
     startDate: 'dateString',
     dueDate: 'dateString',
-    specialInstructions: "No special instructions"
+    specialInstructions: 'No special instructions'
   },
   2: {
     id: 2,
@@ -44,7 +44,7 @@ const masterJobsList = {
     lane: 'Phase 3',
     startDate: 'dateString',
     dueDate: 'dateString',
-    specialInstructions: "make sure this job is done"
+    specialInstructions: 'make sure this job is done'
   },
   3: {
     id: 3,
@@ -52,12 +52,44 @@ const masterJobsList = {
     lane: 'Phase 1',
     startDate: 'dateString',
     dueDate: 'dateString',
-    specialInstructions: "Talk to Nick for more info"
+    specialInstructions: 'Talk to Nick for more info'
+  },
+  4: {
+    id: 4,
+    jobType: 'Test',
+    lane: 'Phase 3',
+    startDate: 'dateString',
+    dueDate: 'dateString',
+    specialInstructions: 'make sure this job is done first'
+  },
+  5: {
+    id: 5,
+    jobType: 'Test',
+    lane: 'To Be Started',
+    startDate: 'dateString',
+    dueDate: 'dateString',
+    specialInstructions: 'No special instructions'
+  },
+  6: {
+    id: 6,
+    jobType: 'Torsion',
+    lane: 'Phase 2',
+    startDate: 'dateString',
+    dueDate: 'dateString',
+    specialInstructions: 'make sure this job is done'
+  },
+  7: {
+    id: 7,
+    jobType: 'Torsion',
+    lane: 'Phase 1',
+    startDate: 'dateString',
+    dueDate: 'dateString',
+    specialInstructions: 'Talk to Nick for more info'
   },
 };
 
 
 export {
   masterLaneList,
-  masterJobsList
-}
+  masterJobsList,
+};
