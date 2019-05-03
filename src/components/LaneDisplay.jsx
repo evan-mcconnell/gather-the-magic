@@ -8,9 +8,9 @@ function LaneDisplay() {
   return (
     <div>
       {Object.keys(masterLaneList).map(function(laneId, index) {
-        let lane = masterLaneList[laneId];
-        <Lane laneinfo={lane.name}
-            key={index} />;
+        console.log("inside", masterLaneList[laneId]);
+        return <Lane laneinfo={masterLaneList[laneId]}
+          key={index} />;
       })}
     </div>
   );

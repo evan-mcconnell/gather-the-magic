@@ -5,17 +5,17 @@ const masterLaneList = {
     details: null,
   },
   1: {
-    name: 'To Be Started',
+    name: 'Phase 1',
     id: 1,
     details: null,
   },
   2: {
-    name: 'To Be Started',
+    name: 'Phase 2',
     id: 2,
     details: null,
   },
   3: {
-    name: 'To Be Started',
+    name: 'Phase 3',
     id: 3,
     details: null,
   },
