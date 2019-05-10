@@ -7,6 +7,7 @@ import Job from './Job';
 const Main = styled.div`
   height: 100%;
   flex-grow: 1;
+  min-width: 350px;
 `;
 const LaneName = styled.div`
   text-align: center;

@@ -6,18 +6,23 @@ const FlexDiv = styled.div`
   display: flex;
   flex-direction: row;
 `;
+const Today = styled.div`
+  padding: 20px;
+`;
 const Main = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   margin-left: 15px;
-  width: 60%;
+  width: 90%;
   height: 70px;
 `;
 const Alinks = styled.p`
   font-size: 1em;
 `;
+
+var thisDay = new Date().toJSON().slice(0,10).replace(/-/g,'/');
 
 function Header() {
 
@@ -36,6 +41,9 @@ function Header() {
         <Alinks><Link style={linkStyle} to="/">Jobs Board </Link></Alinks>
         <Alinks><Link style={linkStyle} to="/"> Inventory Board</Link></Alinks>
       </FlexDiv>
+      <Today>
+        {thisDay}
+      </Today>
       <style jsx>{`
         Alinks {
           font-size: 1em;
