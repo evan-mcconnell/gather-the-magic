@@ -1,11 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function JobBoardOptions() {
+function JobBoardOptions(props) {
   return (
     <div>
-      <button onClick={()=>{}}>Add A Job</button>
+      <button onClick={props.onOpenNewJob}>Add A Job</button>
     </div>
   )
-}
+};
+
+JobBoardOptions.propTypes = {
+  onOpenNewJob: PropTypes.func,
+};
 
 export default JobBoardOptions;
