@@ -16,7 +16,7 @@ const Main = styled.div`
   height: 70px;
 `;
 const Alinks = styled.p`
-font-size: 1em;
+  font-size: 1em;
 `;
 
 function Header() {
