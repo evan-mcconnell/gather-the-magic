@@ -14,13 +14,6 @@ function Job(props) {
     headerColor = "#1db001";
   }
 
-  const Card = styled.div`
-    width: 90%;
-    margin: 5px auto;
-    border: 1px solid black;
-    background-color: white;
-    height: 100px;
-  `;
   const MainCard = styled.div`
     padding: 5px;
     font-family: arial;
@@ -40,7 +33,7 @@ function Job(props) {
     padding: 5px;`;
     
   return (
-    <Card>
+    <div className="card">
       <JobHeader>
         <h3>{props.jobInfo.jobType}</h3>
         <h5>{props.jobInfo.dueDate}</h5>
@@ -52,7 +45,21 @@ function Job(props) {
           <a href="">Inventory</a>
         </InventoryInfo>
       </MainCard>
-    </Card>
+      <style jsx>{`
+        .card {
+          height: 100px;
+          width: 90%;
+          margin: 10px auto;
+          border: 1px solid black;
+          background-color: white;
+          transition: width, 0.3s;
+        }
+        .card:hover {
+          width: 95%;
+          height: 110px;
+        }
+      `}</style>
+    </div>
   );
 }
 

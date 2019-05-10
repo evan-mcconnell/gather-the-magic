@@ -7,7 +7,6 @@ import {masterLaneList} from './../data';
 const LaneContainer = styled.div`
   display: flex;
   flex-direction: row;
-  
 `;
 
 
