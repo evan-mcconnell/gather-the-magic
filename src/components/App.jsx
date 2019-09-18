@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import JobBoard from './JobBoard';
-import Header from './Header';
+import Landing from './screens/Landing';
+import Header from './ui/Header';
 
 class App extends Component {
   render() {
     return (
       <div>
+        <Header />
+        <hr />
         <Router>
-          <Header />
-          <hr />
-          <Route exact path="/" component={JobBoard} />
-          {/* <Route path="/inventory" component={InventoryBoard} /> */}
+          <Route exact path="/" component={Landing} />
         </Router>
         <style jsx global>{`
           body {
