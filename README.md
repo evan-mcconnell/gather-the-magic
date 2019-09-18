@@ -1,4 +1,4 @@
-# Digital Kanban
+# GENERIC README FORMAT
 
 #### Job and Inventory Tracking for Your Business
 
@@ -122,25 +122,7 @@ Slices:
 * jsx 
 * CSS
 
-
 <br>
-
-
-## Note on Commit Message Issue
-I began the repo using create react app. All seemed fine until I wanted to configur "my" eslint further, and realized I had to eject the app to do that. Again all seemed ok temporaily, but then the app began failing to compile for things such as a single console.log anywhere in the app, despite that being only warning level in my .eslintrc file. I decided to start fresh from my own template so that I could actually understand what was happening in the configurations and alter things as I wanted. This caused me to lose my commit history from the morning, so here it is from the other file: 
-
-```bash
-43d3a06 (HEAD -> master) small changes, saving before eject tohave control over linting
-f2abe5d connect components involved in lane display, debug some issues with unfamiliar linting and structure (first time using react create app)
-3824d1a more some planning info from this README into Digital-Job-Tracker-Planning repo and style header
-3c1cc5a (km/master) add basic wireframe (using sketch) to README, set up backbone of some components
-dc49261 add 'shape of data' section to planning in README, sketching out the state/data structure
-e8b2b83 add to README 'musings and decisions on technologies' section documenting my explorations into other tech options and why I'm using the techs in my final stack
-ba24493 fix pathing on component plan image
-81dc59d add first draft of component map (job board view only) and update readme with description and user stories
-fa159b0 initialize project using create react app and add styled compoments package 
-```
-
 
 ## License
 [MIT](./LICENSE.txt)
