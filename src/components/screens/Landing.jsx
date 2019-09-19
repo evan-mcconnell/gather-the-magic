@@ -3,7 +3,7 @@ import React from 'react';
 function Landing() {
   return (
     <div>
-      <p>Landing</p>
+      <p>Landing/ Sign In Page</p>
     </div>
   )
 }
