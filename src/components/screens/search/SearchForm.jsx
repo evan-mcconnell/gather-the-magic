@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SearchHeader() {
+function SearchForm() {
   return (
     <div>
       This is a Place to search
@@ -8,4 +8,4 @@ function SearchHeader() {
   )
 }
 
-export default SearchHeader;
+export default SearchForm;

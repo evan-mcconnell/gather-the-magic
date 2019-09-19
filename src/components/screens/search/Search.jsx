@@ -1,11 +1,11 @@
 import React from 'react';
-import SearchHeader from './SearchHeader';
+import SearchForm from './SearchForm';
 import SearchResults from './SearchResults';
 
 function Search() {
   return (
     <div>
-      <SearchHeader />
+      <SearchForm />
       <SearchResults />
     </div>
   )

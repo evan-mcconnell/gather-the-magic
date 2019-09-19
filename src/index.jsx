@@ -1,16 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
+import {createStore, applyMiddleware} from 'redux';
 import { AppContainer } from 'react-hot-loader';
 import { HashRouter } from 'react-router-dom';
+import createSagaMiddleware from 'redux-saga';
+import rootReducer from './reducers';
+import rootSaga from './saga';
 
+
+// set up store and saga
+const sagaMiddleware = createSagaMiddleware()
+const store = createStore(
+  rootReducer,
+  applyMiddleware(sagaMiddleware)
+)
+sagaMiddleware.run(rootSaga)
 
 
 const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <HashRouter>
-        <Component/>
+        <Provider store={store}>
+          <Component/>
+        </Provider>
       </HashRouter>
     </AppContainer>,
     document.getElementById('react-app-root')
