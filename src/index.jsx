@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import {createStore, applyMiddleware} from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import { HashRouter } from 'react-router-dom';
 import createSagaMiddleware from 'redux-saga';
@@ -16,7 +17,6 @@ const store = createStore(
   applyMiddleware(sagaMiddleware)
 )
 sagaMiddleware.run(rootSaga)
-
 
 const render = (Component) => {
   ReactDOM.render(

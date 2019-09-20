@@ -1,6 +1,7 @@
 import "regenerator-runtime/runtime";
 import { put, take, takeEvery, takeLatest, all, call, select } from 'redux-saga/effects';
-
+import constants from './constants';
+const { c } = constants;
 
 // worker sagas ==============================
 
