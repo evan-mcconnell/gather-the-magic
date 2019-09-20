@@ -6,6 +6,7 @@ function RoundToggle(props) {
     border-radius: 50%;
     height: ${p => (p.height || `50px`)};
     width: ${p => (p.width || `50px`)};
+    background-color: ${p => p.active ? 'black' : 'grey'}
   `
   return <StyledDiv {...props}>{props.children}</StyledDiv>
 }

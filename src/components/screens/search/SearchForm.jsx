@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
+import RoundToggle from '../../ui/RoundToggle';
 
 function SearchForm() {
+  const [button1, toggleButton1] = useState(true)
+
   return (
     <div>
-      This is a Place to search
+      <RoundToggle onClick={() => toggleButton1(!button1)} active={button1}>TOGGLE</RoundToggle>
     </div>
   )
 }
