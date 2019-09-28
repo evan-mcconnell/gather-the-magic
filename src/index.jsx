@@ -7,7 +7,7 @@ import { AppContainer } from 'react-hot-loader';
 import { HashRouter } from 'react-router-dom';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './reducers';
-import rootSaga from './saga';
+import rootSaga from './sagas';
 
 
 // set up store and saga

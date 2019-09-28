@@ -1,1 +1,5 @@
-export const initialState = {}
+export const initialState = {
+                search: {
+                  searching: false
+                }
+              }
