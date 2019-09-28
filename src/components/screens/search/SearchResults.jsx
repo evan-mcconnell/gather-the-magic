@@ -12,7 +12,9 @@ function SearchResults(props) {
 
 
   if (props.search.searching) {
-    return <div> Loading... </div> 
+    return (
+      <div> Loading... </div> 
+    )
   } else if (!props.search.searching) {
     return (
       <div> 
