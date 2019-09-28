@@ -1,14 +1,15 @@
 import constants from './../constants';
 const { c, initialState } = constants;
 
-const searchReducer = (state = initialState, action) => {
-  let newState = state
+const searchReducer = (state = initialState.search, action) => {
+  let newState = Object.assign({}, state)
   switch(action.type) {
     case c.CARD_SEARCH:
-      newState.search.searching = true
+      newState.searching = true
       return newState;
-    case c.SEARCH_FOUND:
-      newState.search.searching = false
+    case c.SEARCHED_CARDS_FORMATTED:
+      newState.searching = false
+      newState.cards = action.cards
       return newState;
     default: 
       return state;

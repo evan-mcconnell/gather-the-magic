@@ -26,8 +26,8 @@ function SearchForm(props) {
   const [buttonArtifact, toggleButtonArtifact] = useState(false)
   const [buttonLand, toggleButtonLand] = useState(false)
 
-  let _keyword = null;
-
+  let _keyword = {}
+  _keyword.value = '';
 
   function formData() {
     let colors = []
@@ -48,9 +48,9 @@ function SearchForm(props) {
     return {keyword: _keyword.value, union: colorUnion, colors: colors, cardTypes: cardTypes}
   }
 
-  async function handleSearchSubmit(e) {
+  function handleSearchSubmit(e) {
     e.preventDefault();
-    let newSearch = await formData();
+    let newSearch = formData();
     console.log(newSearch)
     dispatch(cardSearch(newSearch))
     _keyword.value = '';

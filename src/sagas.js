@@ -2,7 +2,7 @@ import "regenerator-runtime/runtime";
 import { put, take, takeEvery, takeLatest, all, call, select } from 'redux-saga/effects';
 import constants from './constants';
 import {formatSearch} from './util';
-const { c } = constants;
+const { c, Card } = constants;
 
 // worker sagas ==============================
 
@@ -30,17 +30,33 @@ export function *cardSearch(action) {
   yield(null);
 }
 
-export function *setSearchedCards(action) {
-  
+export function *formatSearchedCards(action) {
+  const rawCardArr = action.cards.data
+  let cardDisplayArr = rawCardArr.map((card) => {
+    let newCard = new Card(
+      card.name, 
+      card.type_line, 
+      card.power, 
+      card.toughness, 
+      card.colors, 
+      card.color_identity,
+      card.mana_cost,
+      card.cmc,
+      card.oracle_text)
+    return newCard;
+  })
+  console.log("new format", cardDisplayArr)
+  yield put ({ type: c.SEARCHED_CARDS_FORMATTED, cards: cardDisplayArr})
 }
 
 // watcher sagas ==============================
+
 export function *watchCardSearch() {
   yield takeEvery(c.CARD_SEARCH, cardSearch);
 }
 
-export function *watchSetSearchedCards() {
-  yield takeEvery(c.SEARCHED_CARDS_RECIEVED, setSearchedCards);
+export function *watchFormatSearchedCards() {
+  yield takeEvery(c.SEARCHED_CARDS_RECIEVED, formatSearchedCards);
 }
 
 // root saga ==============================
@@ -48,6 +64,6 @@ export function *watchSetSearchedCards() {
 export default function *rootSaga() {
   yield all([
     watchCardSearch(),
-    watchSetSearchedCards(),
+    watchFormatSearchedCards(),
   ])
 }
