@@ -2,3 +2,4 @@ export const TRIGGER = 'TRIGGER';
 
 
 export const CARD_SEARCH = 'CARD_SEARCH';
+export const SEARCHED_CARDS_RECIEVED = 'SEARCHED_CARDS_RECIEVED';

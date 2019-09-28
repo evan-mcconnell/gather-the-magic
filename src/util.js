@@ -13,7 +13,7 @@ const formatSearch = (params) => {
   }
   if (params.cardTypes.length) {
     params.cardTypes.forEach((type) => {
-      typeStr = typeStr.concat('+t%3', type)
+      typeStr = typeStr.concat('+t%3A', type)
       console.log(typeStr)
     })
   }
