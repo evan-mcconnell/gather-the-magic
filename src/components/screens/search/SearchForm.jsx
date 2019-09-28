@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 import RoundToggle from '../../ui/RoundToggle';
 import images from './../../../assets/images/index';
+import { cardSearch } from './../../../actions';
 
 import constants from '../../../constants';
 const { c } = constants;
@@ -10,14 +11,13 @@ const { c } = constants;
 function SearchForm(props) {
 
   const {dispatch} = props
+
   const [buttonWhite, toggleButtonWhite] = useState(false)
   const [buttonBlue, toggleButtonBlue] = useState(false)
   const [buttonBlack, toggleButtonBlack] = useState(false)
   const [buttonRed, toggleButtonRed] = useState(false)
   const [buttonGreen, toggleButtonGreen] = useState(false)
-
   const [colorUnion, toggleColorUnion] = useState(false)
-
   const [buttonCreature, toggleButtonCreature] = useState(false)
   const [buttonPlaneswalker, toggleButtonPlaneswalker] = useState(false)
   const [buttonInstant, toggleButtonInstant] = useState(false)
@@ -48,11 +48,11 @@ function SearchForm(props) {
     return {keyword: _keyword.value, union: colorUnion, colors: colors, cardTypes: cardTypes}
   }
 
-  function handleSearchSubmit(e) {
+  async function handleSearchSubmit(e) {
     e.preventDefault();
-    let newSearch = formData();
-    dispatch({type: c.CARD_SEARCH, params: newSearch})
+    let newSearch = await formData();
     console.log(newSearch)
+    dispatch(cardSearch(newSearch))
     _keyword.value = '';
   }
 
@@ -164,4 +164,10 @@ function SearchForm(props) {
   )
 }
 
-export default connect()(SearchForm);
+function mapStateToProps(state){
+  return {
+    search: state.search
+  }
+}
+
+export default connect(mapStateToProps)(SearchForm);

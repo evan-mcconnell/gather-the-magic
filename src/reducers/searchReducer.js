@@ -3,7 +3,7 @@ const { c, initialState } = constants;
 
 const searchReducer = (state = initialState, action) => {
   let newState = state
-  switch(action.c) {
+  switch(action.type) {
     case c.CARD_SEARCH:
       newState.search.searching = true
       return newState;

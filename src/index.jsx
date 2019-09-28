@@ -18,6 +18,10 @@ const store = createStore(
 )
 sagaMiddleware.run(rootSaga)
 
+// let unsubscribe = store.subscribe(() =>
+//   console.log('store', store.getState())
+// );
+
 const render = (Component) => {
   ReactDOM.render(
     <AppContainer>

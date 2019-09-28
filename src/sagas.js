@@ -6,42 +6,40 @@ const { c } = constants;
 
 // worker sagas ==============================
 
-export function *cardSearch() {
+export function *cardSearch(action) {
   console.log('in saga')
   
-  formatSearch(action.pararms)
+  const query = formatSearch(action.params);
 
-  const url = `https://api.scryfall.com/cards/search?${query}`;
-  const initObj = {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      appkey: CLIENT_APP_KEY
-    },
-  };
+  console.log('in SAGA', query)
 
-  try {
-    const response = yield fetch(url, initObj).then(res => res.json());
-    // yield put({ type: c.??, cards: response });
-  } catch (error) {
-    console.warn("error getting cards: ", error);
-  }
-  yeild(null);
+  // const url = `https://api.scryfall.com/cards/search?${query}`;
+  // const initObj = {
+  //   method: "GET",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     appkey: CLIENT_APP_KEY
+  //   },
+  // };
+
+  // try {
+  //   const response = yield fetch(url, initObj).then(res => res.json());
+  //   // yield put({ type: c.??, cards: response });
+  // } catch (error) {
+  //   console.warn("error getting cards: ", error);
+  // }
+  // yeild(null);
 }
 
 // watcher sagas ==============================
-
 export function *watchCardSearch() {
-  while (true) {
-    yield takeEvery(c.CARD_SEARCH, cardSearch);
-  }
+  yield takeEvery(c.CARD_SEARCH, cardSearch);
 }
 
 // root saga ==============================
 
 export default function *rootSaga() {
   yield all([
-    // watcher sagas go here
     watchCardSearch(),
   ])
 }
