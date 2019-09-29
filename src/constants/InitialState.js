@@ -11,7 +11,7 @@ export const initialState = {
                       power: undefined,
                       text: "As an additional cost to cast this spell, sacrifice a blue permanent.↵Counter target spell.",
                       toughness: undefined,
-                      type_line: "Instant" ,
+                      type_line: "instant" ,
                     }
                   ],
                 }

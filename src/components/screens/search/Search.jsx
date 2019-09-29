@@ -5,7 +5,7 @@ import SearchResults from './SearchResults';
 function Search() {
   return (
     <div>
-      {/* <SearchForm /> */}
+      <SearchForm />
       <SearchResults />
     </div>
   )
