@@ -34,6 +34,7 @@ export function *formatSearchedCards(action) {
   const rawCardArr = action.cards.data
   let cardDisplayArr = rawCardArr.map((card) => {
     let newCard = new Card(
+      card.id,
       card.name, 
       card.type_line, 
       card.power, 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import CardListDisplay from './../../ui/CardListDisplay';
+import CardList from '../../ui/CardList';
 
 function SearchResults(props) {
 
@@ -12,8 +12,8 @@ function SearchResults(props) {
     )
   } else if (!props.search.searching) {
     return (
-      <div className> 
-        <CardListDisplay cards={props.search.cards}/> 
+      <div className='list'> 
+        <CardList cards={props.search.cards}/> 
       </div>
     )
   }

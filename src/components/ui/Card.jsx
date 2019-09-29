@@ -6,7 +6,7 @@ function Card(props) {
     <div className='main'>
 
       <div className='image'>
-        <image src='https://via.placeholder.com/140x200'></image>
+        <img src='https://via.placeholder.com/140x200'></img>
       </div>
       <div className='details'>
 
@@ -34,12 +34,9 @@ function Card(props) {
 
       <style jsx>{`
         .main {
-          margin: auto;
           margin-bottom: 30px;
           max-width: 500px;
           min-width: 300px;
-          border: 2px solid darkgrey;
-          border-radius: 30px;
           padding: 20px;
           display: flex;
           flex-direction: row;
@@ -55,7 +52,10 @@ function Card(props) {
           width: 60%;
         }
         p {
+          margin 10px 0;
           font-size: 0.8em;
+          max-height: 100px;
+          overflow: scroll;
         }
         .mainDetails {
         }

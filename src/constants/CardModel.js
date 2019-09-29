@@ -1,6 +1,7 @@
 
 export default class Card {
-  constructor(name, type_line, power, toughness, colors, color_identity, mana_cost, cmc, oracle_text) {
+  constructor(id, name, type_line, power, toughness, colors, color_identity, mana_cost, cmc, oracle_text) {
+    this.id = id;
     this.name = name;
     this.type_line = type_line;
     this.power = power;
