@@ -2,12 +2,12 @@ import constants from '../constants';
 const {c, initialState} = constants
 
 const collectionReducer = (state = initialState.collection, action) => {
-  let newState = Object.assign({}, state)
-  switch(action.c) {
+  let newState = {...state}
+  switch(action.type) {
     case c.ADD_CARD_TO_COLLECTION:
-      const id = action.card.id
-      const cardObj = { id: card }
-      newState.cards = {...newState, cardObj}
+      console.log("reducer", newState)
+      const cardObj = { [action.card.id]: {...action.card} }
+      newState.cards = {...newState.cards, ...cardObj}
       return newState;
     default: 
       return state;

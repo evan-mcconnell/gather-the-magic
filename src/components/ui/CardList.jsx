@@ -1,8 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Card from './Card';
+import { addCardToCollection, addCardToDeck } from './../../actions'
 
 
-function CardList(props) {
+function CardList(props) { 
+  const {dispatch} = props;
+
+  function onAddCardToCollection(card) {
+    console.log("in CardList", card)
+    dispatch(addCardToCollection(card))
+  }
+
   return(
     <div className='mainList'>
       { 
@@ -11,7 +20,7 @@ function CardList(props) {
             return (
               <div className='card' key={index}>
                 <Card card={card}/>
-                <button type='button' onClick>Add to Cards</button>
+                <button type='button' onClick={() => {onAddCardToCollection(card)}}>Add to Collection</button>
                 <button type='button'>Add to Deck...</button>
               </div>
             )
@@ -42,4 +51,4 @@ function CardList(props) {
 }
 
 
-export default CardList;
+export default connect()(CardList);
