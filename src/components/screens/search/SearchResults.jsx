@@ -13,7 +13,7 @@ function SearchResults(props) {
   } else if (!props.search.searching) {
     return (
       <div className='list'> 
-        <CardList cards={props.search.cards}/> 
+        <CardList cards={props.search.cards} mapStyle='array'/> 
       </div>
     )
   }

@@ -6,26 +6,37 @@ import { addCardToCollection, addCardToDeck } from './../../actions'
 
 function CardList(props) { 
   const {dispatch} = props;
+  const cards = props.cards;
 
   function onAddCardToCollection(card) {
-    console.log("in CardList", card)
     dispatch(addCardToCollection(card))
   }
 
   return(
+
     <div className='mainList'>
-      { 
-        props.cards.length ? 
-        props.cards.map( function(card, index) { 
-            return (
-              <div className='card' key={index}>
-                <Card card={card}/>
-                <button type='button' onClick={() => {onAddCardToCollection(card)}}>Add to Collection</button>
-                <button type='button'>Add to Deck...</button>
-              </div>
-            )
-          }) 
-        : null 
+      { props.mapType === 'array' ? 
+          cards.length ? 
+          cards.map( function(card, index) { 
+              return (
+                <div className='card' key={index}>
+                  <Card card={card}/>
+                  <button type='button' onClick={() => {onAddCardToCollection(card)}}>Add to Collection</button>
+                  <button type='button'>Add to Deck...</button>
+                </div>
+              )
+            }) 
+          : null
+        : Object.keys(cards).map( function(cardId, index) { 
+          return (
+            <div className='card' key={index}>
+              <Card card={cards[cardId]}/>
+              <button type='button' onClick={() => {onAddCardToCollection(cards[cardId])}}>Add to Collection</button>
+              <button type='button'>Add to Deck...</button>
+            </div>
+          )
+        }) 
+        }
       }
 
     <style jsx>{`
@@ -48,6 +59,7 @@ function CardList(props) {
     `}</style>
     </div>
   )
+    
 }
 
 

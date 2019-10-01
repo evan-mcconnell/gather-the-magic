@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Landing from './screens/Landing';
 import Search from './screens/search/Search';
+import Collection from './screens/collection/Collection';
 import Header from './ui/Header';
 
 
@@ -17,7 +18,7 @@ class App extends Component {
           <hr />
           <Route exact path="/" component={Landing} />
           <Route path="/search" component={Search} />
-          {/* <Route path="/profile" component={profile} /> */}
+          <Route path="/collection" component={Collection} />
         </div>
         <style jsx global>{`
         body {

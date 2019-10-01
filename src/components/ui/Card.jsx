@@ -34,7 +34,6 @@ function Card(props) {
 
       <style jsx>{`
         .main {
-          margin-bottom: 30px;
           max-width: 500px;
           min-width: 300px;
           padding: 20px;
@@ -42,13 +41,13 @@ function Card(props) {
           flex-direction: row;
         }
         .image {
-          width: 140px;
+          width: 180px;
           height: 200px;
           border-radius: 20px;
         }
         img {
-          width: 140px;
-          height: 200px;
+          width: 160px;
+          height: 220px;
         }
         .details {
           padding: 20px;
