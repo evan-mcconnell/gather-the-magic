@@ -33,6 +33,8 @@ export function *cardSearch(action) {
 export function *formatSearchedCards(action) {
   const rawCardArr = action.cards.data
   let cardDisplayArr = rawCardArr.map((card) => {
+    let image = card.image_uris ? card.image_uris.normal : "https://via.placeholder.com/140x200";
+    let imageSm = card.image_uris ? card.image_uris.small : "https://via.placeholder.com/100x150";
     let newCard = new Card(
       card.id,
       card.name, 
@@ -43,7 +45,9 @@ export function *formatSearchedCards(action) {
       card.color_identity,
       card.mana_cost,
       card.cmc,
-      card.oracle_text)
+      card.oracle_text,
+      image, 
+      imageSm)
     return newCard;
   })
   console.log("new format", cardDisplayArr)

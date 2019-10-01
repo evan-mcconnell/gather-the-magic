@@ -6,7 +6,7 @@ function Card(props) {
     <div className='main'>
 
       <div className='image'>
-        <img src='https://via.placeholder.com/140x200'></img>
+        <img src={card.image}></img>
       </div>
       <div className='details'>
 
@@ -42,10 +42,13 @@ function Card(props) {
           flex-direction: row;
         }
         .image {
-          background-color: lightgrey;
           width: 140px;
           height: 200px;
           border-radius: 20px;
+        }
+        img {
+          width: 140px;
+          height: 200px;
         }
         .details {
           padding: 20px;

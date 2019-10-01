@@ -16,8 +16,8 @@ export const initialState = {
                   ],
                 },
                 collection: {
-                  cards: [
-                    { 
+                  cards: {
+                    id: { 
                       cmc: 1,
                       color_identity: ["U"],
                       colors: ["U"],
@@ -28,7 +28,7 @@ export const initialState = {
                       toughness: undefined,
                       type_line: "Instant" ,
                     }
-                  ]
+                  }
                 }, 
                 decks: []
               }
