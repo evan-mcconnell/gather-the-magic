@@ -6,7 +6,10 @@ import { Link } from 'react-router-dom';
 function Header() {
   const linkStyle = {
     textDecoration: 'none',
-    color: 'white'
+    color: 'white',
+    backgroundColor: 'black',
+    padding: '4px',
+    margin: '5px'
   }
 
   return (
@@ -16,20 +19,12 @@ function Header() {
           <LogButton color='black'>Sign In</LogButton>
           <LogButton color='black'>Something</LogButton>
         </div>
-        <div className="links">
-          <li>
-            <Link to="/" style={linkStyle}>Home</Link>
-          </li>
-          <li>
-            <Link to="/search" style={linkStyle}>Search</Link>
-          </li>
-          <li>
-            <Link to="/collection" style={linkStyle}>Collection</Link>
-          </li>
-          <li>
-            <Link to="/decks" style={linkStyle}>Decks</Link>
-          </li>
-        </div>
+        <nav className="links">
+          <Link to="/" style={linkStyle}>Home</Link>
+          <Link to="/search" style={linkStyle}>Search</Link>
+          <Link to="/collection" style={linkStyle}>Collection</Link>
+          <Link to="/decks" style={linkStyle}>Decks</Link>
+        </nav>
       </div>
       <h1>Gather the Magic</h1>
       <style jsx>{`

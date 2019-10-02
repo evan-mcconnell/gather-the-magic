@@ -12,6 +12,10 @@ function CardList(props) {
     dispatch(addCardToCollection(card))
   }
 
+  function onAddCardToDeck(card) {
+    dispatch(addCardToDeck(card))
+  }
+
   return(
 
     <div className='mainList'>
@@ -22,21 +26,21 @@ function CardList(props) {
                 <div className='card' key={index}>
                   <Card card={card}/>
                   <button type='button' onClick={() => {onAddCardToCollection(card)}}>Add to Collection</button>
-                  <button type='button'>Add to Deck...</button>
+                  <button type='button' onClick={() => {onAddCardToDeck(card)}}>Add to Deck...</button>
                 </div>
               )
             }) 
           : null
         : Object.keys(cards).map( function(cardId, index) { 
+          const card = cards[cardId]
           return (
             <div className='card' key={index}>
-              <Card card={cards[cardId]}/>
-              <button type='button' onClick={() => {onAddCardToCollection(cards[cardId])}}>Add to Collection</button>
-              <button type='button'>Add to Deck...</button>
+              <Card card={card}/>
+              <button type='button' onClick={() => {onAddCardToCollection(card)}}>Add to Collection</button>
+              <button type='button' onClick={() => {onAddCardToDeck(card)}}>Add to Deck...</button>
             </div>
           )
         }) 
-        }
       }
 
     <style jsx>{`
